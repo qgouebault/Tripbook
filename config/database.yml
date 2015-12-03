@@ -21,6 +21,7 @@ test:
   database: db/test.sqlite3
 
 production:
-  database: tripbook_production
   adapter: postgresql
-  url: ENV["DATABASE_URL"]
+  encoding: unicode
+  url: <%= ENV["DATABASE_URL"] %>
+  pool: 5
