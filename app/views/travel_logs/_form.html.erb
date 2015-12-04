@@ -1,4 +1,4 @@
-<%= form_for(@travel_log) do |f| %>
+<%= simple_form_for @travel_log do |f| %>
   <% if @travel_log.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@travel_log.errors.count, "error") %> prohibited this travel_log from being saved:</h2>
@@ -11,14 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.association  :user %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
