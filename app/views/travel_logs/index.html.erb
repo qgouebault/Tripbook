@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Travel Logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @travel_logs.each do |travel_log| %>
+      <tr>
+        <td><%= travel_log.title %></td>
+        <td><%= travel_log.description %></td>
+        <td><%= link_to 'Show', travel_log %></td>
+        <td><%= link_to 'Edit', edit_travel_log_path(travel_log) %></td>
+        <td><%= link_to 'Destroy', travel_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Travel log', new_travel_log_path %>
