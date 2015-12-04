@@ -1,2 +1,60 @@
-<h1>Welcome to Trip Book</h1>
-<p>Welcome in your amazing trip book where you can share your travel experiences !!!</p>
+<div class='container'>
+    <div class="jumbotron">
+       <h1>Welcome to Trip Book</h1>
+       <p>Welcome in your amazing trip book where you can share your travel experiences !!!</p>
+    </div>
+</div>
+
+<div class='container'>
+    <ol class="breadcrumb">
+      <li><a href="#">Accueil</a></li>
+    </ol>
+</div>
+
+
+    
+    <% if user_signed_in? %>
+    <%= link_to 'Mon compte', user_path %>
+    <%= link_to 'Se déconnecter', destroy_user_session_path %>
+    <%else %>
+    <%= link_to 'S\'inscrire', new_user_registration_path %>
+    <%= link_to 'Se connecter', new_user_session_path %>
+    <%end %>
+    
+    <%= link_to 'Liste des carnets', travel_logs_path %>
+    
+
+<div class='container'>
+    <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="..." alt="...">
+          <div class="caption">
+            <h3>Carnet de Voyage 1</h3>
+            <p>blavlavla</p>
+            <p><a href="#" >Plus...</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="..." alt="...">
+          <div class="caption">
+            <h3>Carnet de Voyage 2</h3>
+            <p>blavlavla</p>
+            <p><a href="#" >Plus...</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="..." alt="...">
+          <div class="caption">
+            <h3>Carnet de Voyage 3</h3>
+            <p>blavlavla</p>
+            <p><a href="#" >Plus...</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
