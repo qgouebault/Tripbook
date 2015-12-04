@@ -10,5 +10,10 @@
   <%= @travel_log.description %>
 </p>
 
+<p>
+  <strong>User:</strong>
+  <%= @travel_log.user %>
+</p>
+
 <%= link_to 'Edit', edit_travel_log_path(@travel_log) %> |
 <%= link_to 'Back', travel_logs_path %>
