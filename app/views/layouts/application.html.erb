@@ -34,7 +34,6 @@
         <li>  <%= link_to 'Mon compte', user_path %></li>
         <%end %>
         <li> <%= link_to 'Liste des carnets', travel_logs_path %></li>
-        <li role="separator" class="divider"></li>
         <% if user_signed_in? %>
         <li> <%= link_to 'Se déconnecter', destroy_user_session_path %></li>
         <%else %>
