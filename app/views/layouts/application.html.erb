@@ -32,16 +32,17 @@
         <li> <%= link_to 'Accueil', root_path %></li>
          <% if user_signed_in? %>
         <li>  <%= link_to 'Mon compte', user_path %></li>
-        <%end %>
-        <li> <%= link_to 'Liste des carnets', travel_logs_path %></li>
+        <li> <%= link_to 'Mes carnets', travel_logs_path %></li>
+        <%end%>
+        <li><a href="#">Rechercher</a></li>
+        <li><a href="#"> Carnet Aleatoire</a></li>
         <% if user_signed_in? %>
         <li> <%= link_to 'Se déconnecter', destroy_user_session_path %></li>
         <%else %>
         <li> <%= link_to 'S\'inscrire', new_user_registration_path %></li>
         <li> <%= link_to 'Se connecter', new_user_session_path %></li>
         <%end %>
-        <li><a href="#">Recherche</a></li>
-        <li><a href="#">Aleatoire</a></li>
+        
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

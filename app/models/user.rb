@@ -3,12 +3,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-    has_many :travel_logs
-    
-    def to_s
-        self.firstname
-        self.lastname
-    end
+  has_many :travel_logs
+  
+  def to_s
+      "#{self.firstname} #{self.lastname}"
+  end
 end
 
 
