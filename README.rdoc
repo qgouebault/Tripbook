@@ -26,3 +26,23 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+== Deploy on Heroku
+
+* git push heroku master
+* heroku run db:migrate
+* Site : https://shrouded-wave-3017.herokuapp.com/
+
+== Cloud 9
+* rails server -b $IP -p $PORT
+
+== Git
+* git add .
+* git commit -m "mon message"
+
+* git push branche = pousser 
+* git pull branche = tirer
+
+* git checkout branche = changer de branche
+* git merge
+* git rebase
