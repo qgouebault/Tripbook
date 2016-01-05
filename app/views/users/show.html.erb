@@ -1,35 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  
+  <p>
+    <strong>Prenom :</strong>
+    <%= @user.firstname %>
+  </p>
+  
+  <p>
+    <strong>Nom :</strong>
+    <%= @user.lastname %>
+  </p>
+  
+  <p>
+    <strong>Nom d'utilisateur :</strong>
+    <%= @user.username %>
+  </p>
+  
+  <p>
+    <strong>Date de naissance :</strong>
+    <%= @user.birthdate %>
+  </p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Birthdate:</strong>
-  <%= @user.birthdate %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
-  <strong>Firstname:</strong>
-  <%= @user.firstname %>
-</p>
-
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastname %>
-</p>
-
-<p>
-  <strong>e-Mail:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_registration_path %> |
-<%= link_to 'Accueil', root_path %>
-
+  <p>
+    <strong>e-Mail :</strong>
+    <%= @user.email %>
+  </p>
+  
+  <%= link_to 'Edit', edit_user_registration_path, wrapper_html: {class:"btn btn-default"} %>
+</div>
