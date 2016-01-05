@@ -27,6 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #simple form
 gem 'simple_form', '~> 3.2'
 
+# paperclip : upload de photo
+gem "paperclip", "~> 4.3"
+
 #devise
 gem 'devise', '~> 3.5', '>= 3.5.2'
 
