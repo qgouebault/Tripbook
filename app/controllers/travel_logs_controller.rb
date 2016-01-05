@@ -4,7 +4,7 @@ class TravelLogsController < ApplicationController
   # GET /travel_logs
   # GET /travel_logs.json
   def index
-    @travel_logs = TravelLog.all
+    @travel_logs = current_user.travel_logs
   end
 
   # GET /travel_logs/1
