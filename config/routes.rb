@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  get 'contact/index'
+
+  get 'search/index'
+
   devise_for :users
   resource :user , only:[:show]
   resources :travel_logs
+  
+  #match get '/contact', :to => 'contact#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -9,7 +15,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   #root 'travel_logs#index'
-
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

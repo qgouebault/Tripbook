@@ -34,14 +34,16 @@
         <li><%= link_to 'Mon compte', user_path %></li>
         <li> <%= link_to 'Mes carnets', travel_logs_path %></li>
         <%end%>
-        <li><a href="#">Rechercher</a></li>
-        <li><a href="#"> Carnet Aleatoire</a></li>
+        <li><%= link_to 'Rechercher', search_index_path %></li>
+        <li><%= link_to 'Contact', contact_index_path %></li>
+        <!--<li><--%= link_to 'Carnet Aleatoire', random_travellog_path %></li>-->
         <% if user_signed_in? %>
-        <li> <%= link_to 'Se déconnecter', destroy_user_session_path %></li>
+        <li> <%= link_to 'Se déconnecter', new_user_registration_path %></li>
         <%else %>
         <li> <%= link_to 'S\'inscrire', new_user_registration_path %></li>
         <li> <%= link_to 'Se connecter', new_user_session_path %></li>
         <%end %>
+        
         
       </ul>
     </div><!-- /.navbar-collapse -->
