@@ -3,10 +3,9 @@
 <center><h1>Mes carnets</h1></center>
 
 <center>
-  <a class="btn btn-success" href="#" role="button">
-    <span class="glyphicon glyphicon-plus" aria-hidden="true">
-    </span>
-  </a>
+  <%= link_to new_travel_log_path, class: 'btn btn-success' do %>
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  <% end %>
 </center>
 
 <div class='container'>
@@ -18,9 +17,9 @@
         <div class="caption">
           <h3><%= travel_log.title %></h3>
           <p><%= travel_log.description %></p>
-          <p><a href="<%= link_to 'Plus...', travel_log %>" >Plus...</a></p>
-          <p><a<%= link_to 'Edit', edit_travel_log_path(travel_log) %></td></a></p>
-          <p><a<%= link_to 'Destroy', travel_log, method: :delete, data: { confirm: 'Are you sure?' } %></td></a></p>
+          <p><%= link_to 'Plus...', travel_log %></p>
+          <p><%= link_to 'Edit', edit_travel_log_path(travel_log) %></p>
+          <p><%= link_to 'Destroy', travel_log, method: :delete, data: { confirm: 'Are you sure?' } %></p>
         </div>
       </div>
     </div>
