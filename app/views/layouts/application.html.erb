@@ -5,17 +5,17 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
 <header> 
-<div class="row">
-  <div class="hero-unit">
+
+  <div class="hero-unit row">
     <h1 class="main-tilte">Welcome</h1>
   </div>
-</div>
+
 <nav class="navbar navbar-default" style="border-style:none">
-  <div class="container-fluid">
+  <div class="container-fluid container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -31,17 +31,20 @@
       <ul class="nav navbar-nav">
         <li> <%= link_to 'Accueil', root_path %></li>
          <% if user_signed_in? %>
-        <li>  <%= link_to 'Mon compte', user_path %></li>
-        <%end %>
-        <li> <%= link_to 'Liste des carnets', travel_logs_path %></li>
+        <li><%= link_to 'Mon compte', user_path %></li>
+        <li> <%= link_to 'Mes carnets', travel_logs_path %></li>
+        <%end%>
+        <li><%= link_to 'Rechercher', search_index_path %></li>
+        <li><%= link_to 'Contact', contact_index_path %></li>
+        <!--<li><--%= link_to 'Carnet Aleatoire', random_travellog_path %></li>-->
         <% if user_signed_in? %>
-        <li> <%= link_to 'Se déconnecter', destroy_user_session_path %></li>
+        <li> <%= link_to 'Se déconnecter', new_user_registration_path %></li>
         <%else %>
         <li> <%= link_to 'S\'inscrire', new_user_registration_path %></li>
         <li> <%= link_to 'Se connecter', new_user_session_path %></li>
         <%end %>
-        <li><a href="#">Recherche</a></li>
-        <li><a href="#">Aleatoire</a></li>
+        
+        
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
