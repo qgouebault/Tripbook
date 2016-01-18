@@ -5,4 +5,6 @@ class TravelLog < ActiveRecord::Base
     :url => ':id/:basename.:content_type_extension',
     :styles => { :small => "230x230>" , :medium => "500x500>"}
     validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+    has_many :jours
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :jours
   get 'contact/index'
 
   get 'search/index'
