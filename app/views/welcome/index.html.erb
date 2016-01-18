@@ -1,16 +1,18 @@
 <div class='container'>
+  <% @travel_logs.each do |travel_log| %>
   <div class="row">
-    <% @travel_logs.each do |travel_log| %>
     <div class="col-sm-12 col-md-6">
-      <div class="thumbnail">
-        <%= image_tag(travel_log.avatar.url(:medium)) %>
-        <div class="caption">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <center><%= image_tag(travel_log.avatar.url(:small)) %></center>
+        </div>
+        <div class="panel-body">
           <h3><%= travel_log.title %></h3>
           <p><%= travel_log.description %></p>
           <p><%= link_to 'Plus...', travel_log %></p>
         </div>
       </div>
     </div>
-     <% end %>
   </div>
+  <% end %>
 </div>

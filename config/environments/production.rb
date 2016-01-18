@@ -76,4 +76,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  #Enable email with mandril
+  config.action_mailer.default_url_options = { host: 'shrouded-wave-3017.herokuapp.com/' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:                'smtp.mailgun.org',
+    port:                   2525,
+    enable_starttls_auto:   true,
+    user_name:              'postmaster@sandbox6f79ed9fc2504e539b7df7fcc8cd3cfa.mailgun.org',
+    password:               '1ad9cf4ea12f331a28a10ac7f06f11ca',
+    authentification:       'login',
+    domain:                 'sandbox6f79ed9fc2504e539b7df7fcc8cd3cfa.mailgun.org'
+  }
 end

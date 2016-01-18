@@ -38,4 +38,17 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  #Enable email with mandril
+  config.action_mailer.default_url_options = { host: 'tripbook-qgouebault.c9users.io' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:                'smtp.mailgun.org',
+    port:                   2525,
+    enable_starttls_auto:   true,
+    user_name:              'postmaster@sandbox6f79ed9fc2504e539b7df7fcc8cd3cfa.mailgun.org',
+    password:               '1ad9cf4ea12f331a28a10ac7f06f11ca',
+    authentification:       'login',
+    domain:                 'sandbox6f79ed9fc2504e539b7df7fcc8cd3cfa.mailgun.org'
+  }
 end
