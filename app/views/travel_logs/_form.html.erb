@@ -14,6 +14,12 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :user_id, input_html: { class:"hide", value:current_user.id } %><p><%= current_user %></p>
+  
+  
+  
+    <%= f.label :avatar %><br>
+    <%= image_tag(@travel_log.avatar.url(:small)) %>
+    <%= f.file_field :avatar %>
 
   <div class="actions">
     <%= f.submit %>

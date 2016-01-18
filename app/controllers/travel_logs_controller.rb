@@ -69,6 +69,10 @@ class TravelLogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def travel_log_params
-      params.require(:travel_log).permit(:title, :description, :user_id)
+      params.require(:travel_log).permit(:title, :description, :user_id, :avatar)
     end
 end
+
+
+
+private
