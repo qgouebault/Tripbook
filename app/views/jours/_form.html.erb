@@ -1,0 +1,28 @@
+<%= simple_form_for(@jour) do |f| %>
+  <% if @jour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jour.errors.count, "error") %> prohibited this jour from being saved:</h2>
+
+      <ul>
+      <% @jour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-inputs">
+  </div>
+  
+  <%= f.input :name %>
+  <%= f.input :description %>
+  
+  <%= f.label :avatar %><br>
+  <%= image_tag(@jour.avatar.url(:small)) %>
+  <%= f.file_field :avatar %>
+  
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
