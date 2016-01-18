@@ -1,19 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @travel_log.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @travel_log.description %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @travel_log.user %>
-</p>
-
-<%= link_to 'Edit', edit_travel_log_path(@travel_log) %> |
-<%= link_to 'Back', travel_logs_path %>
+<div class="container panel">
+  <p id="notice"><%= notice %></p>
+  
+  <center>
+    <%= image_tag(@travel_log.avatar.url(:small)) %>
+  </center>
+  
+  <h2>
+    <%= @travel_log.title %>
+  </h2>
+  
+  <blockquote>
+      <footer><%= @travel_log.user %></footer>
+  </blockquote>
+  
+  <p>
+    <%= @travel_log.description %>
+  </p>
+  
+  <hr>
+  
+  <%= link_to 'Edit', edit_travel_log_path(@travel_log) %>
+</div>

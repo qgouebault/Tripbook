@@ -1,20 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<center><h1>Mes carnets</h1></center>
-
-<center>
-  <%= link_to new_travel_log_path, class: 'btn btn-success' do %>
-    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-  <% end %>
-</center>
+<div class="row">
+  <h1 class="panel col-xs-4 col-md-2 col-xs-offset-4 col-md-offset-5"><center>Mes carnets</center></h1>
+</div>
 
 <div class='container'>
+  <% @travel_logs.each do |travel_log| %>
   <div class="row">
-    <% @travel_logs.each do |travel_log| %>
     <div class="col-sm-12 col-md-6">
-      <div class="thumbnail">
-        <%= image_tag(travel_log.avatar.url(:small)) %>
-        <div class="caption">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <center><%= image_tag(travel_log.avatar.url(:small)) %></center>
+        </div>
+        <div class="panel-body">
           <h3><%= travel_log.title %></h3>
           <p><%= travel_log.description %></p>
           <p><%= link_to 'Plus...', travel_log %></p>
@@ -23,10 +21,13 @@
         </div>
       </div>
     </div>
-     <% end %>
   </div>
+  <% end %>
 </div>
 
-
-
+<center>
+  <%= link_to new_travel_log_path, class: 'btn btn-success' do %>
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  <% end %>
+</center>
 <br>
