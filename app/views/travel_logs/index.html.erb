@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-  <h1 class="panel col-xs-4 col-md-2 col-xs-offset-4 col-md-offset-5"><center>Mes carnets</center></h1>
+  <h1 class="panel col-xs-6 col-md-2 col-xs-offset-3 col-md-offset-5"><center>Mes carnets</center></h1>
 </div>
 
 <div class='container'>
@@ -16,8 +16,8 @@
           <h3><%= travel_log.title %></h3>
           <p><%= travel_log.description %></p>
           <p><%= link_to 'Plus...', travel_log %></p>
-          <p><%= link_to 'Edit', edit_travel_log_path(travel_log) %></p>
-          <p><%= link_to 'Destroy', travel_log, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <p><%= link_to 'Editer', edit_travel_log_path(travel_log) %></p>
+          <p><%= link_to 'Supprimmer', travel_log, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimmer ?' } %></p>
         </div>
       </div>
     </div>
