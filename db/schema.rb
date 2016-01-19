@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118150733) do
+ActiveRecord::Schema.define(version: 20160119082345) do
 
   create_table "jours", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.date     "date"
-    t.integer  "id_travel_log"
+    t.integer  "travel_log_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.string   "avatar_file_name"
