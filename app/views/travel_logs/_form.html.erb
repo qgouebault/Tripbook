@@ -16,7 +16,7 @@
   <%= f.input :user_id, input_html: { class:"hide", value:current_user.id } %><p><%= current_user %></p>
   
   <%= f.label :avatar %><br>
-  <%= image_tag(@travel_log.avatar_file_name) %>
+  <%= image_tag(@travel_log.avatar.url) %>
   <%= f.file_field :avatar %>
   <br/>
   <br/>
