@@ -5,7 +5,7 @@ class TravelLogsController < ApplicationController
   # GET /travel_logs.json
   def index
     @travel_logs = current_user.travel_logs
-  end
+end
 
   # GET /travel_logs/1
   # GET /travel_logs/1.json
@@ -72,6 +72,8 @@ class TravelLogsController < ApplicationController
       params.require(:travel_log).permit(:title, :description, :user_id, :avatar)
     end
 end
+
+
 
 
 
