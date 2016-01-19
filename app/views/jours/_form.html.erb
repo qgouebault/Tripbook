@@ -14,18 +14,9 @@
   <div class="form-inputs">
   </div>
   
-  <div class="field">
-    <%= f.label "Nom" %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.text_field :date %>
-  </div>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :date, input_html: {type:"date"} %>
   
   <%= f.label :avatar %><br>
   <%= image_tag(@jour.avatar.url(:small)) %>
