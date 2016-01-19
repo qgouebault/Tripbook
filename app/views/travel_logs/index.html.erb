@@ -5,22 +5,24 @@
 </div>
 
 <div class='container'>
-  <% @travel_logs.each do |travel_log| %>
+  <% @travel_logs.each_slice(2) do |travel_log| %>
   <div class="row">
+    <% travel_log.each do |travel| %>
     <div class="col-sm-12 col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <center><%= image_tag(travel_log.avatar.url(:small)) %></center>
+          <center><%= image_tag(travel.avatar.url(:small)) %></center>
         </div>
         <div class="panel-body">
-          <h3><%= travel_log.title %></h3>
-          <p><%= travel_log.description %></p>
-          <p><%= link_to 'Plus...', travel_log %></p>
-          <p><%= link_to 'Editer', edit_travel_log_path(travel_log) %></p>
-          <p><%= link_to 'Supprimmer', travel_log, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimmer ?' } %></p>
+          <h3><%= travel.title %></h3>
+          <p><%= travel.description %></p>
+          <p><%= link_to 'Plus...', travel %></p>
+          <p><%= link_to 'Editer', edit_travel_log_path(travel) %></p>
+          <p><%= link_to 'Supprimmer', travel, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimmer ?' } %></p>
         </div>
       </div>
     </div>
+    <% end %>
   </div>
   <% end %>
 </div>
