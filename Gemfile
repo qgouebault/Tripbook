@@ -30,6 +30,9 @@ gem 'simple_form', '~> 3.2'
 # paperclip : upload de photo
 gem "paperclip", "~> 4.3"
 
+# search : ransack
+gem 'ransack'
+
 #devise
 gem 'devise', '~> 3.5', '>= 3.5.2'
 

@@ -1,10 +1,33 @@
 <div class="container panel">
   <h1>Rechercher</h1>
-  <form class="navbar-form navbar-left" role="search">
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search">
+  
+  <%= search_form_for @q, url: search_index_path do |f| %>
+
+    <%= f.label "Un titre, un mot clé.."%>
+    <%= f.search_field :title_or_description_or_jours_name_or_jours_description_cont %>
+
+    <%= f.submit %>
+  <% end %>
+
+  <div class='container'>
+    <% @travel_logs.each_slice(2) do |travel_log| %>
+    <div class="row">
+      <% travel_log.each do |travel| %>
+      <div class="col-sm-12 col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <center><%= image_tag(travel.avatar.url(:small)) %></center>
+          </div>
+          <div class="panel-body">
+            <h3><%= travel.title %></h3>
+            <p><%= travel.description %></p>
+            <p><%= link_to 'Plus...', travel %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-  <br />
+    <% end %>
+  </div>
+
 </div>
