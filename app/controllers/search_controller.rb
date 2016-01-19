@@ -1,6 +1,7 @@
 class SearchController < ApplicationController
   def index
     @q = TravelLog.ransack(params[:q])
-    @search_travel_log = @q.result(distinct: true)
+    @travel_logs = @q.result.includes(:jours)
+    #.page(params[:page])
   end
 end
