@@ -14,11 +14,19 @@
           <center><%= image_tag(travel.avatar.url(:small)) %></center>
         </div>
         <div class="panel-body">
+<<<<<<< HEAD
+          <h3><%= travel_log.title %></h3>
+          <p><%= travel_log.description %></p>
+          <p><%= link_to 'Plus...', travel_log %></p>
+          <p><%= link_to 'Editer', edit_travel_log_path(travel_log) %></p>
+          <p><%= link_to 'Supprimer', travel_log, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimmer ?' } %></p>
+=======
           <h3><%= travel.title %></h3>
           <p><%= travel.description %></p>
           <p><%= link_to 'Plus...', travel %></p>
           <p><%= link_to 'Editer', edit_travel_log_path(travel) %></p>
           <p><%= link_to 'Supprimmer', travel, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimmer ?' } %></p>
+>>>>>>> 3f1349560e2be31d4bd140d4261c37fc1ba0d199
         </div>
       </div>
     </div>

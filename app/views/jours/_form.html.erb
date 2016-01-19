@@ -14,15 +14,31 @@
   <div class="form-inputs">
   </div>
   
-  <%= f.input :name %>
-  <%= f.input :description %>
+  <div class="field">
+    <%= f.label "Nom" %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </div>
   
   <%= f.label :avatar %><br>
   <%= image_tag(@jour.avatar.url(:small)) %>
   <%= f.file_field :avatar %>
   
-
+  <%= f.input :travel_log_id, as: :hidden %>
+  
+  <br/>
+  <br/>
+  
   <div class="form-actions">
+    <center>
     <%= f.button :submit %>
+    </center>
   </div>
 <% end %>

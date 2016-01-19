@@ -17,13 +17,26 @@
     <%= @travel_log.description %>
   </p>
   
-  <hr>
-  
-  <center>
-  <%= link_to new_jour_path, class: 'btn btn-success' do %>
-    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  <div class='container'>
+  <% @jours.each do |jour| %>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <center><%= image_tag(jour.avatar_file_name(:small)) %></center>
+        </div>
+        <div class="panel-body">
+          <h3><%= jour.name %></h3>
+           <p><%= jour.date %></p>
+          <p><%= jour.description %></p>
+        </div>
+      </div>
+    </div>
+  </div>
   <% end %>
-</center>
+  </div>
+  
+  <hr>
   
   <%= link_to 'Edit', edit_travel_log_path(@travel_log) %>
 </div>

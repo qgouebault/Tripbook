@@ -10,6 +10,7 @@ end
   # GET /travel_logs/1
   # GET /travel_logs/1.json
   def show
+    @jours = @travel_log.jours
   end
 
   # GET /travel_logs/new
@@ -19,6 +20,7 @@ end
 
   # GET /travel_logs/1/edit
   def edit
+    @jours = @travel_log.jours
   end
 
   # POST /travel_logs
@@ -28,7 +30,7 @@ end
 
     respond_to do |format|
       if @travel_log.save
-        format.html { redirect_to @travel_log, notice: 'Travel log was successfully created.' }
+        format.html { redirect_to @travel_log, notice: 'Le carnet a bien été créé.' }
         format.json { render :show, status: :created, location: @travel_log }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ end
   def update
     respond_to do |format|
       if @travel_log.update(travel_log_params)
-        format.html { redirect_to @travel_log, notice: 'Travel log was successfully updated.' }
+        format.html { redirect_to @travel_log, notice: 'Le carnet a bien été modifié.' }
         format.json { render :show, status: :ok, location: @travel_log }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ end
   def destroy
     @travel_log.destroy
     respond_to do |format|
-      format.html { redirect_to travel_logs_url, notice: 'Travel log was successfully destroyed.' }
+      format.html { redirect_to travel_logs_url, notice: 'Le carnet a bien été supprimé.' }
       format.json { head :no_content }
     end
   end
