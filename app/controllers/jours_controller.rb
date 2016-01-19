@@ -4,7 +4,7 @@ class JoursController < ApplicationController
   # GET /jours
   # GET /jours.json
   def index
-    @jours = current_user.travel_logs.jours
+    @jours = Jour.all
   end
 
   # GET /jours/1
@@ -14,7 +14,7 @@ class JoursController < ApplicationController
 
   # GET /jours/new
   def new
-    @jour = Jour.new
+    @jour = Jour.new(travel_log_id: params[:travel_log_id])
   end
 
   # GET /jours/1/edit
@@ -28,7 +28,7 @@ class JoursController < ApplicationController
 
     respond_to do |format|
       if @jour.save
-        format.html { redirect_to @jour, notice: 'Jour was successfully created.' }
+        format.html { redirect_to edit_travel_log_path(@jour.travel_log_id), notice: 'Jour was successfully created.' }
         format.json { render :show, status: :created, location: @jour }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class JoursController < ApplicationController
   def update
     respond_to do |format|
       if @jour.update(jour_params)
-        format.html { redirect_to @jour, notice: 'Jour was successfully updated.' }
+        format.html { redirect_to edit_travel_log_path(@jour.travel_log_id), notice: 'Jour was successfully updated.' }
         format.json { render :show, status: :ok, location: @jour }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class JoursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def jour_params
-      params.require(:jour).permit(:name, :description, :date, :avatar)
+      params.require(:jour).permit(:name, :description, :date, :avatar, :travel_log_id)
     end
 end
