@@ -19,6 +19,7 @@
     <%= f.input :date, input_html: {type:"date"} %>
   
   <%= f.label :avatar %><br>
+
   <%= image_tag(@jour.avatar.url(:small)) %>
   <%= f.file_field :avatar %>
   
