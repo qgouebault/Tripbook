@@ -44,7 +44,7 @@ class TravelLogsController < ApplicationController
   def update
     respond_to do |format|
       if @travel_log.update(travel_log_params)
-        format.html { redirect_to @travel_log, notice: 'Le carnet a bien été modifié.' }
+        format.html { redirect_to @travel_log, notice: '<div class="alert alert-success" role="alert">Le carnet a bien été modifié.</div>' }
         format.json { render :show, status: :ok, location: @travel_log }
       else
         format.html { render :edit }
