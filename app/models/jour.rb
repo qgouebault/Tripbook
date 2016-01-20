@@ -5,7 +5,6 @@ class Jour < ActiveRecord::Base
     has_attached_file :avatar, 
     :styles => { :small => "230x230>" , :medium => "500x500>"}
     validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
-<<<<<<< HEAD
     
      def rename_avatar
       #avatar_file_name - important is the first word - avatar - depends on your column in DB table
@@ -13,6 +12,3 @@ class Jour < ActiveRecord::Base
       self.avatar.instance_write :file_name, "#{Time.now.to_i.to_s}#{extension}"
     end
 end
-=======
-end
->>>>>>> 2bddea61c7ec2412739efb56f1a4cf7d3e0d60f0

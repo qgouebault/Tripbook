@@ -18,4 +18,4 @@
 /spring-1000/
 
 # Ignonre picture travel
-/public/system/travel_logs/*
+#/public/system/travel_logs/*
