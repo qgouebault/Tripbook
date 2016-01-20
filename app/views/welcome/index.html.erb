@@ -10,7 +10,7 @@
         <div class="panel-body">
           <h3><%= travel.title %></h3>
           <p><%= travel.description %></p>
-          <p><%= link_to 'Plus...', travel %></p>
+          <p><%= link_to 'Plus...', travel, {:type=>'button', :class => "btn btn-primary dropdown-toggle"}  %></p>
         </div>
       </div>
     </div>

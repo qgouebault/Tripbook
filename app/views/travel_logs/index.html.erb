@@ -17,9 +17,9 @@
         <div class="panel-body">
           <h3><%= travel.title %></h3>
           <p><%= travel.description %></p>
-          <p><%= link_to 'Plus...', travel %></p>
-          <p><%= link_to 'Editer', edit_travel_log_path(travel) %></p>
-          <p><%= link_to 'Supprimer', travel, method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer ?' } %></p>
+          <p><%= link_to 'Plus...', travel, {:class => "btn btn-primary dropdown-toggle"} %></p>
+          <p><%= link_to 'Editer', edit_travel_log_path(travel), {:class => "btn btn-info dropdown-toggle"} %></p>
+          <p><%= link_to 'Supprimer', travel, method: :delete, data: { confirm: 'Etes vous sûr de vouloir supprimer ?' }  %></p>
         </div>
       </div>
     </div>

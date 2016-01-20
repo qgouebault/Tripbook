@@ -2,28 +2,29 @@
     <h1>Modifier mon carnet</h1>
     
     <%= render 'form' %>
-    
 
   <div class='container'>
-    <% @jours.each do |jour| %>
-    <div class="row">
-      <div class="col-sm-12 col-md-6">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <center><%= image_tag(jour.avatar.url) %></center>
-          </div>
-          <div class="panel-body">
-            <h3><%= jour.name %></h3>
-             <p><%= jour.date %></p>
-            <p><%= jour.description %></p>
-            <p><%= link_to 'Editer', edit_jour_path(jour) %></p>
-            <p><%= link_to 'Supprimer', jour, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer ?' } %></p>
-          </div>
+  <% @jours.each_slice(2) do |jour| %>
+  <div class="row">
+    <% jour.each do |jourshow| %>
+    <div class="col-sm-12 col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <center><%= image_tag(jourshow.avatar.url(:medium)) %></center>
+        </div>
+        <div class="panel-body">
+         <h3><%= jourshow.name %></h3>
+            <p><%= jourshow.date %></p>
+            <p><%= jourshow.description %></p>
+            <p><%= link_to 'Editer', edit_jour_path(jourshow), {:class => "btn btn-info dropdown-toggle"}  %></p>
+            <p><%= link_to 'Supprimer', jourshow, method: :delete, data: { confirm: 'Etes vous sur de vouloir supprimer ?' } %></p>
         </div>
       </div>
     </div>
     <% end %>
   </div>
+  <% end %>
+</div>
       
   <center>
     <%= link_to new_jour_path(travel_log_id: @travel_log.id), class: 'btn btn-success' do %>
@@ -31,5 +32,5 @@
       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
     <% end %>
   </center>
-
+<br />
 </div>

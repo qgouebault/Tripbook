@@ -2,8 +2,8 @@
     <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
 <% end %>
 <div class="container panel">
-  
-  <center>
+  <br />
+  <center class="imgpanel">
     <%= image_tag(@travel_log.avatar.url(:medium)) %>
   </center>
   
@@ -18,27 +18,30 @@
   <p>
     <%= @travel_log.description %>
   </p>
-  
+  <br />
   <div class='container'>
-  <% @jours.each do |jour| %>
-  <div class="row">
-    <div class="col-sm-12 col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <center><%= image_tag(jour.avatar.url(:medium)) %></center>
-        </div>
-        <div class="panel-body">
-          <h3><%= jour.name %></h3>
-           <p><%= jour.date %></p>
-          <p><%= jour.description %></p>
+    <% @jours.each_slice(2) do |jour| %>
+    <div class="row">
+      <% jour.each do |jouraffich| %>
+      <div class="col-sm-12 col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <center><%= image_tag(jouraffich.avatar.url(:medium)) %></center>
+          </div>
+          <div class="panel-body">
+            <h3><%= jouraffich.name %></h3>
+            <p><%= jouraffich.date %></p>
+            <p><%= jouraffich.description %></p>
+          </div>
         </div>
       </div>
+      <% end %>
     </div>
-  </div>
-  <% end %>
+    <% end %>
   </div>
   
-  <hr>
+<br />
   
-  <%= link_to 'Edit', edit_travel_log_path(@travel_log) %>
+  <center><%= link_to 'Edit', edit_travel_log_path(@travel_log), {:class => "btn btn-info dropdown-toggle"} %></center>
+  <br />
 </div>
