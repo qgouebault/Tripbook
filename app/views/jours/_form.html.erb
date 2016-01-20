@@ -19,7 +19,10 @@
     <%= f.input :date, input_html: {type:"date"} %>
   
   <%= f.label :avatar %><br>
+  <% if @jour.new_record? %>
+  <% else %>
   <%= image_tag(@jour.avatar.url(:small)) %>
+  <% end %>
   <%= f.file_field :avatar %>
   
   <%= f.input :travel_log_id, as: :hidden %>
