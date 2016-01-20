@@ -16,15 +16,11 @@
   <%= f.input :user_id, input_html: { class:"hide", value:current_user.id } %><p><%= current_user %></p>
   
   <%= f.label :avatar %><br>
-<<<<<<< HEAD
+
   <% if @travel_log.new_record? %>
   <% else %>
     <%= image_tag(@travel_log.avatar.url(:small)) %>
   <% end %>
-=======
-  
-  <%= image_tag(@travel_log.avatar.url(:small)) %>
->>>>>>> 2bddea61c7ec2412739efb56f1a4cf7d3e0d60f0
   <%= f.file_field :avatar %>
   <br/>
   <br/>
