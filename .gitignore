@@ -19,3 +19,4 @@
 
 # Ignonre picture travel
 /public/system/travel_logs/*
+/public/system/jours/*
